@@ -55,5 +55,14 @@ document.addEventListener("DOMContentLoaded", function () {
             alertButton.innerText = "Daily Reminder";
         });
     }
-    
+
+    //-- Number Loops --
+    const numbersList = document.getElementById("numbers");
+if (numbersList) {
+    for (let i = 1; i <= 12; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = i % 2 === 0 ? "Even" : "Odd";
+        numbersList.appendChild(listItem);
+    }
+}
 });
