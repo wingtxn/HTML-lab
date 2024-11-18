@@ -3,30 +3,57 @@ document.addEventListener("DOMContentLoaded", function () {
     //-- Footer Year --
     const fYear = document.getElementById("footerYear");
     const d = new Date();
-    fYear.textContent = d.getFullYear();
+    if (fYear) {
+        fYear.textContent = d.getFullYear();
+    } else {
+        console.warn("Footer year element (#footerYear) not found.");
+    }
 
     //-- Greeting ------
     const greeting = document.getElementById("greetings");
-    const currentHour = new Date().getHours();
+    if (greeting) {
+        const currentHour = new Date().getHours();
 
-    let greetingText;
-    let greetingClass;
+        let greetingText;
+        let greetingClass;
 
-    if (currentHour < 8) {
-        greetingText = "Rise & Shine!";
-        greetingClass = "early-morning";
-    } else if (currentHour < 12) {
-        greetingText = "Good Morning!";
-        greetingClass = "morning";
-    } else if (currentHour < 17) {
-        greetingText = "Good Afternoon!";
-        greetingClass = "afternoon";
+        if (currentHour < 8) {
+            greetingText = "Rise & Shine!";
+            greetingClass = "early-morning";
+        } else if (currentHour < 12) {
+            greetingText = "Good Morning!";
+            greetingClass = "morning";
+        } else if (currentHour < 17) {
+            greetingText = "Good Afternoon!";
+            greetingClass = "afternoon";
+        } else {
+            greetingText = "Good Evening!";
+            greetingClass = "evening";
+        }
+
+        greeting.textContent = greetingText;
+        greeting.classList.add(greetingClass);
     } else {
-        greetingText = "Good Evening!";
-        greetingClass = "evening";
+        console.warn("Greeting element (#greetings) not found.");
     }
 
-    greeting.textContent = greetingText;
-    greeting.classList.add(greetingClass);
-
+    //-- Button Alert ---------
+    const alertButton = document.getElementById("btn-alert");
+    
+    if (alertButton) {
+        alertButton.addEventListener("click", function () {
+            alert("Don't Forget to Hydrate! Drink Some Water! 💦");
+        });
+    } else {
+        console.warn("Alert button (#btn-alert) not found.");
+    }
+    if (alertButton) {
+        alertButton.addEventListener("mouseover", function () {
+            alertButton.innerText = "Stay Hydrated! 💦";
+        });
+        alertButton.addEventListener("mouseout", function () {
+            alertButton.innerText = "Daily Reminder";
+        });
+    }
+    
 });
