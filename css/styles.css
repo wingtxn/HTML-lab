@@ -129,6 +129,42 @@ a {
     margin: 20px auto;
 }
 
+#btn-alert {
+    font-family: inherit;
+    background-color: #51acd6;
+    color: white;
+    padding: 2% 5%;  /* Use percentage-based padding */
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 60px;
+    font-size: 2vw;
+    display: inline-block;
+    width: auto; 
+    max-width: 100%; 
+}
+
+/* Media Query for Small Devices (Phones) */
+@media (max-width: 600px) {
+    #btn-alert {
+        font-size: 4vw; /* Larger font size on small screens */
+        padding: 5% 10%; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Media Query for Larger Screens (Desktops) */
+@media (min-width: 1200px) {
+    #btn-alert {
+        font-size: 1.5vw; /* Smaller font size on larger screens */
+    }
+}
+
+
+#btn-alert:hover {
+    background-color: #68cdff; /* Darker green */
+}
+
 /* Table Styling */
 table {
     width: 100%;
