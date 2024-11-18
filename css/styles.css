@@ -33,6 +33,26 @@
     transition: color 0.3s;
 }
 
+.early-morning {
+    color: #f8e7b9;
+    font-style: italic;
+  }
+
+.morning {
+    color: #ffd561;
+    font-style: italic;
+  }
+  
+  .afternoon {
+    color: #87ceeb;
+    font-style: italic;
+  }
+  
+  .evening {
+    color: #000d96;
+    font-style: italic;
+  }
+
 #about-me {
     padding: 20px;
     text-align: center;
